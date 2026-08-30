@@ -1,0 +1,171 @@
+%------------------------------------------------------------------------------
+% CV in Latex
+% Author : Charles Rambo
+% Based off of: https://github.com/sb2nov/resume and Jake's Resume on Overleaf
+% Template: photo-palatino-cv
+%------------------------------------------------------------------------------
+
+\documentclass[a4paper,11pt]{article}
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage[english]{babel}
+\usepackage{tabularx}
+\usepackage{tikz}
+\usepackage{graphicx}
+\input{glyphtounicode}
+
+% serif
+\usepackage{palatino}
+
+% Adjust margins
+\addtolength{\oddsidemargin}{-1cm}
+\addtolength{\evensidemargin}{-1cm}
+\addtolength{\textwidth}{2cm}
+\addtolength{\topmargin}{-1cm}
+\addtolength{\textheight}{2cm}
+
+\urlstyle{same}
+
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0cm}
+
+% Sections formatting
+\titleformat{\section}{
+  \vspace{-4pt}\scshape\raggedright\large
+}{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
+
+% Ensure that .pdf is machine readable/ATS parsable
+\pdfgentounicode=1
+
+%-----CUSTOM COMMANDS FOR FORMATTING SECTIONS----------------------------------
+\newcommand{\CVItem}[1]{
+  \item\small{
+    {#1 \vspace{-2pt}}
+  }
+}
+
+\newcommand{\CVSubheading}[4]{
+  \vspace{-2pt}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2 \\
+      \small#3 & \small #4 \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\CVSubSubheading}[2]{
+    \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \text{\small#1} & \text{\small #2} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\CVSubItem}[1]{\CVItem{#1}\vspace{-4pt}}
+
+\renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
+
+\newcommand{\CVSubHeadingListStart}{\begin{itemize}[leftmargin=0.5cm, label={}]}
+\newcommand{\CVSubHeadingListEnd}{\end{itemize}}
+\newcommand{\CVItemListStart}{\begin{itemize}}
+\newcommand{\CVItemListEnd}{\end{itemize}\vspace{-5pt}}
+
+\begin{document}
+
+%-----HEADING WITH PHOTO-------------------------------------------------------
+\begin{minipage}[c]{0.05\textwidth}
+\-\
+\end{minipage}
+\begin{minipage}[c]{0.2\textwidth}
+\begin{tikzpicture}
+    \clip (0,0) circle (1.75cm);
+    \node at (0,-.7) {\includegraphics[width = 7cm]{formalP.jpg}}; 
+\end{tikzpicture}
+\hfill\vline\hfill
+\end{minipage}
+\begin{minipage}[c]{0.65\textwidth}
+    \textbf{\Huge \scshape{[YOUR_NAME]}} \\ \vspace{1pt} 
+    \small{[YOUR_PHONE]} \\
+    \href{mailto:[YOUR_EMAIL]}{\underline{[YOUR_EMAIL]}}\\
+    \href{[YOUR_LINKEDIN_URL]}{\underline{LinkedIn}} \\
+    \href{[YOUR_GITHUB_URL]}{\underline{GitHub}}
+\end{minipage}
+
+%-----EDUCATION----------------------------------------------------------------
+\section{Education}
+  \CVSubHeadingListStart
+    \CVSubheading
+      {{[DEGREE_1] $|$ \emph{\small{[FIELD_1]}}}}{[YEAR_START_1] -- [YEAR_END_1]}
+      {[INSTITUTION_1]}{[LOCATION_1]}
+    \CVSubheading
+      {{[DEGREE_2] $|$ \emph{\small{[FIELD_2]}}}}{[YEAR_START_2] -- [YEAR_END_2]}
+      {[INSTITUTION_2]}{[LOCATION_2]}
+  \CVSubHeadingListEnd
+
+%-----WORK EXPERIENCE----------------------------------------------------------
+\section{Work Experience}
+  \CVSubHeadingListStart
+    \CVSubheading
+      {[JOB_TITLE_1]}{[START_DATE_1] -- [END_DATE_1]}
+      {[COMPANY_1]}{[LOCATION_1]}
+      \CVItemListStart
+        \CVItem{[RESPONSIBILITY_OR_ACHIEVEMENT_1]}
+        \CVItem{[RESPONSIBILITY_OR_ACHIEVEMENT_2]}
+        \CVItem{[RESPONSIBILITY_OR_ACHIEVEMENT_3]}
+      \CVItemListEnd
+    \CVSubheading
+      {[JOB_TITLE_2]}{[START_DATE_2] -- [END_DATE_2]}
+      {[COMPANY_2]}{[LOCATION_2]}
+      \CVItemListStart
+        \CVItem{[RESPONSIBILITY_OR_ACHIEVEMENT_1]}
+        \CVItem{[RESPONSIBILITY_OR_ACHIEVEMENT_2]}
+        \CVItem{[RESPONSIBILITY_OR_ACHIEVEMENT_3]}
+      \CVItemListEnd
+  \CVSubHeadingListEnd
+
+%-----SKILLS-------------------------------------------------------------------
+\section{Technical Skills}
+ \begin{itemize}[leftmargin=0.5cm, label={}]
+    \small{\item{
+     \textbf{Programming Languages}{: [PROGRAMMING_LANGUAGES]} \\
+     \textbf{Research \& System Engineering}{: [RESEARCH_AND_SYSTEMS_SKILLS]} \\
+     \textbf{Platforms and Frameworks}{: [PLATFORMS_AND_FRAMEWORKS]} \\
+     \textbf{Development Tools}{: [DEVELOPMENT_TOOLS]} \\
+     \textbf{Development Hardware}{: [DEVELOPMENT_HARDWARE]} \\
+     \textbf{Technologies}{: [TECHNOLOGIES_AND_DOMAINS]} \\
+     \textbf{Industry Knowledge}{: [INDUSTRY_KNOWLEDGE]} \\
+    }}
+ \end{itemize}
+
+%-----PUBLICATIONS-------------------------------------------------------------
+\section{Publication and Scientific Writing}
+  \CVSubHeadingListStart
+    \CVSubheading
+      {\href{[DOI_OR_URL]}{[PUBLICATION_TITLE]}}{}
+      {[CONFERENCE_OR_VENUE]}{}
+  \CVSubHeadingListEnd
+
+%-----CERTIFICATIONS & AWARDS--------------------------------------------------
+\section{Certification and Awards}
+  \CVSubHeadingListStart
+    \CVSubheading
+      {[CERTIFICATION_OR_AWARD_NAME]}{}
+      {[ISSUER_OR_ORGANIZATION]}{}
+  \CVSubHeadingListEnd
+
+%-----COMPETENCIES & ACTIVITIES------------------------------------------------
+\section{Competencies \& Activities}
+ \begin{itemize}[leftmargin=0.5cm, label={}]
+    \small{\item{
+     \textbf{Languages}{: [LANGUAGES_AND_LEVELS]} \\
+     \textbf{Soft Skills}{: [SOFT_SKILLS]} \\
+     \textbf{Others}{: [OTHER_ACTIVITIES]} \\
+    }}
+ \end{itemize}
+
+\end{document}

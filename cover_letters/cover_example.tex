@@ -1,21 +1,18 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Cover Letter - [Company], [Role]
-%
-% Example cover letter with placeholder content. This is the structural
-% reference for /apply (see 06-cover-letter-templates.md) and the CI smoke
-% test for cover.cls: it must always compile with xelatex to exactly 1 page.
-% It demonstrates the correct itemize pattern: the list sits OUTSIDE
-% \lettercontent{} (whose trailing \\ errors on \end{itemize}) and is
-% wrapped in Raleway-Medium so the bullet font matches the body.
+% Cover Letter - Example Master Template
+% Candidate: Kamrul Hasan
+% Template: deedy-cover
+% Compile with: xelatex cover_example.tex
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \documentclass[]{cover}
 \usepackage{fancyhdr}
-
+\usepackage[usenames,dvipsnames]{xcolor}
+ 
 \pagestyle{fancy}
 \fancyhf{}
-
-\rfoot{Page \thepage \hspace{0pt}}
+ 
+\rfoot{Page \thepage \hspace{1pt}}
 \thispagestyle{empty}
 \renewcommand{\headrulewidth}{0pt}
 \begin{document}
@@ -23,39 +20,55 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %     TITLE NAME
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\namesection{}{\Huge{[YOUR NAME]}}{  \href{mailto:your.email@example.com}{your.email@example.com} | [+XX XXXXXXXXXX] |  \urlstyle{same}\href{https://www.linkedin.com/in/yourprofile}{LinkedIn}
+\namesection{Kamrul}{Hasan}{ 
+Research Engineer \textbar\ \href{mailto:haasankamrul14@gmail.com}{haasankamrul14@gmail.com} \textbar\ +49 163 2304846 \textbar\ \urlstyle{same}\href{https://github.com/kamrulroky}{Github} \textbar\ \urlstyle{same}\href{https://www.linkedin.com/in/kamrul-hasan}{Linkedin}
 }
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %     MAIN COVER LETTER CONTENT
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\hfill
 
+\begin{minipage}[t]{0.50\textwidth} 
+\companyname{[Company Name / Institute]}
+\companyaddress{
+[Department / Division] \\\relax
+[Street Address, Postal Code City]
+}
+\end{minipage}%
+\begin{minipage}[t]{0.50\textwidth} 
 \currentdate{\today}
-\lettercontent{Dear [Hiring Manager / Team],}
+\end{minipage}
 
-\lettercontent{[Opening paragraph: name the role and where you found it, state your strongest connection to it in one sentence, and preview why you are a fit. Keep it to 2--3 sentences.]}
-
-\lettercontent{[Body paragraph: your most relevant experience, framed toward the tasks in the posting. Follow with 3--5 concrete bullets:]}
-
-{\raggedright\fontspec[Path = OpenFonts/fonts/raleway/]{Raleway-Medium}\fontsize{11pt}{13pt}\selectfont
-\begin{itemize}
-    \item \textbf{[Achievement 1]:} [concrete result with a number where possible]
-    \item \textbf{[Achievement 2]:} [skill or project mapped to a posting requirement]
-    \item \textbf{[Achievement 3]:} [evidence for a nice-to-have requirement]
-\end{itemize}\par}
 \vspace{6pt}
+\lettertitle{Subject: Application for [Role Title]}
+\lettercontent{Dear [Hiring Manager / Recruiting Team / Contact Name],}
 
-\lettercontent{[Connection paragraph: why this company specifically. Reference a verified specific: a product, a stated priority, a team. Never generic.]}
+\lettercontent{
+[Opening Paragraph: State the role you are applying for and where you found the position. Highlight your strongest connection to the role in 1--2 sentences and provide an engaging summary of why your engineering background and research experience make you an ideal fit for the position.]
+}
 
-\lettercontent{[Personal fit paragraph: behavioral strengths and what you bring to the team, 2--3 sentences.]}
+\lettercontent{
+[Core Experience Paragraph: Describe your relevant professional background in embedded systems, software engineering, and systems development. Highlight your work with microcontrollers, real-time operating systems (FreeRTOS, Embedded Linux), low-level C/C++ development, and sensor data processing. Connect specific projects and measurable outcomes---such as multi-sensor calibration or algorithm optimization---directly to the core tasks required by the employer.]
+}
 
-\lettercontent{I look forward to hearing from you.}
+\lettercontent{
+[Advanced Technical \& Domain Alignment Paragraph: Expand on specialized domain capabilities, such as automated driving simulation (CARLA), ROS2 pipelines, middleware orchestration (Ankaios), or positioning algorithms (RTLS, Kalman/Bayesian filtering). Mention relevant publications or academic research that demonstrate your capacity to bridge rigorous theoretical concepts with practical, production-grade implementations.]
+}
 
-\begin{flushright}
-% Note: no trailing \\ inside \closing{} - cover.cls appends its own \\, and a
-% doubled break triggers "There's no line here to end."
-\closing{Kind regards,}
+\lettercontent{
+[Company Connection \& Motivation Paragraph: Explain why you are targeting this specific company, institute, or research team. Reference specific technologies, products, or open-source initiatives the team is working on, and describe how your passion for high-impact embedded and autonomous engineering aligns with their mission and technical roadmap.]
+}
 
-\signature{[YOUR NAME]}
-\end{flushright}
+\lettercontent{
+[Working Style \& Soft Skills Paragraph: Summarize your personal strengths, including autonomous problem-solving, structured analytical thinking, and effective collaboration in interdisciplinary teams. Outline your communication skills and language proficiencies (English C1, ongoing German learning), demonstrating readiness to contribute immediately to technical projects.]
+}
+
+\lettercontent{
+Thank you very much for considering my application. I look forward to the opportunity to discuss my qualifications and enthusiasm for this role in a personal interview.
+}
+
+\closing{Kind regards,\\
+Kamrul Hasan}
+
 \end{document}

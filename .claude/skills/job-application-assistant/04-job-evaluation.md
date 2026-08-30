@@ -60,29 +60,29 @@ How well do the required/preferred skills align with the candidate's capabilitie
 | 40-59 | Partial match, significant upskilling needed |
 | 0-39 | Fundamental mismatch |
 
-**Strong match areas:** [YOUR_PRIMARY_SKILLS]
-**Moderate match areas:** [YOUR_SECONDARY_SKILLS]
-**Weak match areas:** [SKILLS_YOU_LACK]
+**Strong match areas:** C/C++, Python, Embedded Linux, FreeRTOS, ROS2, CARLA, RTOS / Bare-Metal, Sensor Fusion, RTLS / Positioning Algorithms, Distributed Systems, Automated Driving Systems (ADS) V&V
+**Moderate match areas:** MATLAB / Simulink, Docker, Ansible, QEMU, Altium 365, Ankaios, OpenCV, TensorFlow, CAN/Ethernet/Serial/I2C/SPI
+**Weak match areas:** Proprietary legacy automotive AUTOSAR stacks (learnable), pure web frontend (React/Angular)
 
 ### 2. Experience Match (0-100)
 Does work history align with what they're looking for? Match on the function and nature of the work performed, not the literal job title - a "Data Consultant" and a "Data Scientist" role can be functionally identical.
 
 | Score | Meaning |
-|-------|---------|
+|-------|-------|
 | 80-100 | Direct experience in the same domain and role type |
 | 60-79 | Related experience, transferable skills clear |
 | 40-59 | Adjacent experience, would need to make the case |
 | 0-39 | Unrelated experience |
 
-**Strong:** [YOUR_DIRECT_EXPERIENCE_DOMAINS]
-**Moderate:** [YOUR_ADJACENT_EXPERIENCE]
-**Entry-level:** [ROLES_WITH_LIMITED_EXPERIENCE]
+**Strong:** Embedded Software Engineering, Firmware Development, Automated Driving Systems Research, Autonomous Systems Verification, RTLS Positioning Systems, Edge/IoT Computing
+**Moderate:** Systems Engineering, Field Application Engineering (FAE), Robotics Simulation, PhD Research positions in Cyber-Physical / Autonomous Systems
+**Entry-level:** Pure hardware ASIC design, large-scale pure cloud web infrastructure
 
 ### 3. Behavioral/Culture Fit (0-100)
 Does the role and company culture match the behavioral profile?
 
 | Score | Meaning |
-|-------|---------|
+|-------|-------|
 | 80-100 | Culture strongly matches behavioral preferences |
 | 60-79 | Mixed signals but mostly compatible |
 | 40-59 | Some friction areas |
@@ -91,35 +91,35 @@ Does the role and company culture match the behavioral profile?
 **Red flags to research:** Department disorganization, work dominated by maintenance over development, poor chemistry with leadership, culture mismatches. Check reviews, media coverage, LinkedIn connections, and network contacts for insider perspective.
 
 ### 4. Location & Logistics (Pass/Fail + Notes)
-- Within commute range: PASS
-- Remote with occasional office: PASS
-- Requires relocation: FAIL (deal-breaker)
+- Location: Anywhere in Germany (Willing to relocate across Germany) -> PASS
+- Remote / Hybrid within Germany -> PASS
+- Outside Germany requiring relocation without visa sponsorship -> FLAG/DISCUSS
 - Frequent international travel: FLAG (discuss with user)
 
 ### 5. Career Alignment & Motivation (0-100)
 Does this role advance career goals and contain tasks that energize?
 
 | Score | Meaning |
-|-------|---------|
+|-------|-------|
 | 80-100 | Strongly aligned with career direction, clear growth path |
 | 60-79 | Good role but only partially aligned with long-term goals |
 | 40-59 | Decent job but doesn't build toward career goals |
 | 0-39 | Dead end or backwards step |
 
 **Career goals:**
-- [YOUR_CAREER_GOAL_1]
-- [YOUR_CAREER_GOAL_2]
-- [YOUR_CAREER_GOAL_3]
+- Transition into high-impact Embedded Software, Autonomous Systems, Robotics, Systems Engineering, or PhD research.
+- Build robust software architectures for cyber-physical, mobility, and embedded systems.
+- Grow into Senior Technical / Lead Systems roles bridging research concepts and deployed hardware solutions.
 
 **Motivation filter:** Evaluate not just whether you *can* do the tasks, but whether the tasks will *energize* you. Consider:
-- Tasks that energize: [YOUR_ENERGIZING_TASKS]
-- Tasks that drain: [YOUR_DRAINING_TASKS]
-- Non-task factors: leadership style, department culture, company values, degree of autonomy
+- Tasks that energize: Low-level C/C++ development, algorithm optimization, multi-sensor calibration, simulation & HIL testing, architecting distributed embedded systems.
+- Tasks that drain: Pure administrative overhead, repetitive manual testing without automation, non-technical paperwork.
+- Non-task factors: Collaborative team culture, high engineering standards, supportive leadership, room for technical initiative.
 
 **Life situation alignment:** Consider personal constraints:
-- **Security**: [YOUR_FINANCIAL_SITUATION_CONTEXT]
-- **Flexibility**: [YOUR_SCHEDULE_CONSTRAINTS]
-- **Professional development**: [YOUR_GROWTH_PRIORITIES]
+- **Security**: Seeking full-time permanent / long-term contract roles post-DLR contract (April 2026).
+- **Flexibility**: Open to on-site, hybrid, and remote setups throughout Germany.
+- **Professional development**: Continuous mastery of modern embedded platforms, ROS2, edge AI, and autonomous systems architectures.
 
 ### 6. Salary Benchmark (Optional)
 

@@ -1,183 +1,214 @@
-%% Example CV - [YOUR_NAME]
-%% Comprehensive overview of all competencies, experience, and achievements.
-%% Use as a master reference when tailoring role-specific CVs.
-%%
-%% SETUP: Run /setup to populate this with your actual information.
-%% Compile with: lualatex main_example.tex
-%% (pdflatex often fails on modern MiKTeX with fontawesome5 font-expansion errors.)
+%------------------------------------------------------------------------------
+% Master CV - Kamrul Hasan
+% Author : Charles Rambo / Kamrul Hasan
+% Template: photo-palatino-cv
+% Compile with: pdflatex main_example.tex
+%------------------------------------------------------------------------------
 
-\documentclass[11pt,a4paper,sans]{moderncv}
-\moderncvstyle{banking}
-\moderncvcolor{blue}
+\documentclass[a4paper,11pt]{article}
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage[english]{babel}
+\usepackage{tabularx}
+\usepackage{tikz}
+\usepackage{graphicx}
+\input{glyphtounicode}
 
-% Force the name and section headings to render in moderncv blue (color1).
-% Default banking leaves them black: moderncvstylebanking.sty's \colorlet
-% copies (not aliases) the pre-scheme accent colour, so the name colours are
-% frozen before \moderncvcolor runs. Re-let them after. \namefont is the hook
-% every name-style macro routes through, so this also works on moderncv 2.3.1
-% (Debian/Ubuntu apt), which has no \firstnamestyle/\lastnamestyle at all.
-\renewcommand*{\namefont}{\fontsize{34}{36}\bfseries\upshape}
-\colorlet{firstnamecolor}{color1}
-\colorlet{lastnamecolor}{color1}
-\colorlet{namecolor}{color1}
-\renewcommand*{\sectionstyle}[1]{{\sectionfont\color{color1}#1}}
+% serif
+\usepackage{palatino}
 
-\usepackage[utf8]{inputenc}
-% moderncv loads hyperref itself in an \AtEndPreamble hook, so \hypersetup
-% must go in an \AtEndPreamble of our own: on moderncv < 2.4 a top-level
-% \usepackage{hyperref} clashes with the class's own
-% \RequirePackage[unicode]{hyperref}. From 2.4.0 the class passes its options
-% through \PassOptionsToPackage instead, which is what removes that clash.
-\AtEndPreamble{\hypersetup{
-    colorlinks=true,
-    linkcolor=blue,
-    filecolor=magenta,
-    urlcolor=blue,
-    pdftitle={[YOUR_NAME] - CV},
-    % Keep pdfpagemode=UseNone: this block runs after moderncv's own
-    % \AtEndPreamble (moderncv.cls sets pdfpagemode there), so a FullScreen
-    % value here would win and open every CV in fullscreen presentation mode.
-    pdfpagemode=UseNone,
-}}
-\usepackage[scale=0.80]{geometry}
-\usepackage{import}
+% Adjust margins
+\addtolength{\oddsidemargin}{-1cm}
+\addtolength{\evensidemargin}{-1cm}
+\addtolength{\textwidth}{2cm}
+\addtolength{\topmargin}{-1cm}
+\addtolength{\textheight}{2cm}
 
-% personal data
-\name{[First]}{[Last]}
-% If you have no address to list, DELETE this whole line. \address{}{}{} fails
-% with "There's no line here to end" on every moderncv version.
-\address{[Your Address, City, Country]}{}{}
-\phone[mobile]{[+XX XXXXXXXXXX]}
-\email{[your.email@example.com]}
-\extrainfo{\href{[https://linkedin.com/in/your-profile]}{LinkedIn}, \href{[https://github.com/your-username]}{GitHub}}
+\urlstyle{same}
 
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0cm}
+
+% Sections formatting
+\titleformat{\section}{
+  \vspace{-4pt}\scshape\raggedright\large
+}{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
+
+% Ensure that .pdf is machine readable/ATS parsable
+\pdfgentounicode=1
+
+%-----CUSTOM COMMANDS FOR FORMATTING SECTIONS----------------------------------
+\newcommand{\CVItem}[1]{
+  \item\small{
+    {#1 \vspace{-2pt}}
+  }
+}
+
+\newcommand{\CVSubheading}[4]{
+  \vspace{-2pt}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2 \\
+      \small#3 & \small #4 \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\CVSubSubheading}[2]{
+    \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \text{\small#1} & \text{\small #2} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\CVSubItem}[1]{\CVItem{#1}\vspace{-4pt}}
+
+\renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
+
+\newcommand{\CVSubHeadingListStart}{\begin{itemize}[leftmargin=0.5cm, label={}]}
+\newcommand{\CVSubHeadingListEnd}{\end{itemize}}
+\newcommand{\CVItemListStart}{\begin{itemize}}
+\newcommand{\CVItemListEnd}{\end{itemize}\vspace{-5pt}}
+
+%------------------------------------------------------------------------------
+% CV STARTS HERE
+%------------------------------------------------------------------------------
 \begin{document}
 
-\makecvtitle
+%-----HEADING WITH PHOTO-------------------------------------------------------
+\begin{minipage}[c]{0.05\textwidth}
+\-\
+\end{minipage}
+\begin{minipage}[c]{0.2\textwidth}
+\begin{tikzpicture}
+    \clip (0,0) circle (1.75cm);
+    \node at (0,-.7) {\includegraphics[width = 7cm]{formalP.jpg}}; 
+\end{tikzpicture}
+\hfill\vline\hfill
+\end{minipage}
+\begin{minipage}[c]{0.65\textwidth}
+    \textbf{\Huge \scshape{Kamrul Hasan}} \\ \vspace{2pt} 
+    \small{+49 1632304846} \\
+    \href{mailto:haasankamrul14@gmail.com}{\underline{haasankamrul14@gmail.com}}\\
+    \href{https://www.linkedin.com/in/kamrul-hasan}{\underline{linkedin.com/in/kamrul-hasan}} \\
+    \href{https://github.com/kamrulroky}{\underline{https://github.com/kamrulroky}}
+\end{minipage}
 
-% ============================================================
-%     PROFILE STATEMENT
-% ============================================================
-
-\vspace{6pt}
-\small{[Write a 3-5 line profile statement tailored to the role you're applying for. Focus on what makes you uniquely qualified. Example: "Data scientist with a PhD in [field] and X years of industry experience. Combines deep domain expertise in [domain] with strong applied machine learning and Python development skills. Experienced in developing end-to-end ML pipelines, from data ingestion to stakeholder-facing dashboards."]}
-
-% ============================================================
-%     CORE COMPETENCIES
-% ============================================================
-
-\section{Core Competencies}
-\vspace{1pt}
-\begin{itemize}
-
-\item \textbf{[Skill Category 1]}: [Specific skills, frameworks, tools. Be concrete.]
-
-\item \textbf{[Skill Category 2]}: [Specific skills, frameworks, tools.]
-
-\item \textbf{[Skill Category 3]}: [Specific skills, frameworks, tools.]
-
-\item \textbf{[Skill Category 4]}: [Domain expertise, methods, approaches.]
-
-\item \textbf{[Skill Category 5]}: [Tools, platforms, software.]
-
-\end{itemize}
-
-% ============================================================
-%     PROFESSIONAL EXPERIENCE
-% ============================================================
-
-\section{Professional Experience}
-\vspace{3pt}
-\begin{itemize}
-
-% --- Most Recent Role ---
-\item{\cventry{[YYYY-Present]}{[Job Title]}{[Company]}{[City, Country]}{}{\vspace{1pt}
-\begin{itemize}
-    \item {[Achievement or responsibility 1 - be specific, use numbers where possible]}
-    \item {[Achievement or responsibility 2]}
-    \item {[Achievement or responsibility 3]}
-    \item {[Achievement or responsibility 4]}
-\end{itemize}}}
-
-\vspace{3pt}
-
-% --- Previous Role ---
-\item{\cventry{[YYYY-YYYY]}{[Job Title]}{[Company]}{[City, Country]}{}{\vspace{1pt}
-\begin{itemize}
-    \item {[Achievement or responsibility 1]}
-    \item {[Achievement or responsibility 2]}
-    \item {[Achievement or responsibility 3]}
-\end{itemize}}}
-
-\vspace{3pt}
-
-% --- Earlier Role ---
-\item{\cventry{[YYYY-YYYY]}{[Job Title]}{[Company]}{[City, Country]}{}{\vspace{1pt}
-\begin{itemize}
-    \item {[Achievement or responsibility 1]}
-    \item {[Achievement or responsibility 2]}
-\end{itemize}}}
-
-\end{itemize}
-
-% ============================================================
-%     EDUCATION
-% ============================================================
-
+%-----EDUCATION----------------------------------------------------------------
 \section{Education}
-\vspace{1pt}
-\begin{itemize}
+  \CVSubHeadingListStart
+    \CVSubheading
+      {{Master of Science $|$ \emph{\small{International Software Systems Science}}}}{2020 -- 2024}
+      {Otto-Friedrich-Universität Bamberg}{Bamberg, Germany}
+      \CVItemListStart
+        \CVItem{Grade: 2.5 (GUT / GOOD). Focus: Distributed Systems, Mobile Systems, Complex Event Processing, Machine Learning.}
+        \CVItem{Thesis: ``Enhancing RSSI-based Positioning Accuracy using Advanced Filtering Techniques'' (Grade: 3.2).}
+      \CVItemListEnd
+    \CVSubheading
+      {{Bachelor of Science $|$ \emph{\small{Computer Science and Engineering}}}}{2012 -- 2017}
+      {Stamford University Bangladesh}{Dhaka, Bangladesh}
+      \CVItemListStart
+        \CVItem{Thesis: ``Applications of Internet of Things Towards Smart Home Automation.''}
+      \CVItemListEnd
+  \CVSubHeadingListEnd
 
-\item{\cventry{[YYYY-YYYY]}{[Degree] in [Field]}{[Institution]}{[City, Country]}{}{\vspace{1pt}
-Thesis: ``[Thesis Title].'' [Brief description of research focus.]
-}}
+%-----WORK EXPERIENCE----------------------------------------------------------
+\section{Work Experience}
+  \CVSubHeadingListStart
+    \CVSubheading
+      {Research Engineer (Wissenschaftlicher Mitarbeiter)}{May 2024 -- April 2026}
+      {Institut für Systems Engineering für zukünftige Mobilität (DLR)}{Oldenburg, Germany}
+      \CVItemListStart
+        \CVItem{Developed research software for runtime validation of Automated Driving Systems (ADS), integrating multi-sensor and infrastructure hazard data into evaluation pipelines.}
+        \CVItem{Designed scenario-based verification pipelines in CARLA simulation and implemented validation metrics for monitoring ADS safety.}
+        \CVItem{Implemented and evaluated middleware for workload and container orchestration on embedded platforms (Eclipse Ankaios, ROS2, Embedded Linux).}
+        \CVItem{Collaborated with consortium stakeholders to translate scientific objectives into deployable prototypes; authored IEEE IV 2026 paper.}
+      \CVItemListEnd
 
-\vspace{3pt}
+    \CVSubheading
+      {Embedded and Backend Developer (Werkstudent)}{December 2020 -- April 2024}
+      {Favendo GmbH}{Bamberg, Germany}
+      \CVItemListStart
+        \CVItem{Developed indoor/outdoor positioning algorithms using advanced Kalman and particle filtering techniques for commercial RTLS.}
+        \CVItem{Designed and validated embedded firmware for positioning sensors; conducted unit, integration, and system testing for multi-sensor hardware.}
+        \CVItem{Analyzed and improved positioning accuracy through systematic measurement calibration and reliability characterization.}
+      \CVItemListEnd
 
-\item{\cventry{[YYYY-YYYY]}{[Degree] in [Field]}{[Institution]}{[City, Country]}{}{\vspace{1pt}
-[Brief description or key topics.]
-}}
+    \CVSubheading
+      {Software Engineer}{November 2018 -- September 2020}
+      {LEADS Corporation Ltd.}{Dhaka, Bangladesh}
+      \CVItemListStart
+        \CVItem{Researched, developed, and deployed software solutions for IoT and AI-driven applications.}
+        \CVItem{Enhanced software development lifecycle practices by adopting Agile and Scrum methodologies.}
+      \CVItemListEnd
 
-\end{itemize}
+    \CVSubheading
+      {Embedded Software Engineer}{May 2017 -- October 2018}
+      {JolPi Electronics Ltd.}{Dhaka, Bangladesh}
+      \CVItemListStart
+        \CVItem{Developed and debugged embedded software utilizing FreeRTOS and bare-metal C programming for ARM microcontrollers.}
+        \CVItem{Applied Test-Driven Development (TDD) to firmware design and board bring-up for consumer electronic devices.}
+      \CVItemListEnd
+  \CVSubHeadingListEnd
 
-% ============================================================
-%     LANGUAGES
-% ============================================================
+%-----SKILLS-------------------------------------------------------------------
+\section{Technical Skills}
+ \begin{itemize}[leftmargin=0.5cm, label={}]
+    \small{\item{
+     \textbf{Programming Languages}{: C/C++, Python, Bash, MATLAB, UML} \\
+     \textbf{Research \& System Engineering}{: System Design \& Modeling, Verification \& Validation (V\&V), Technical Standards} \\
+     \textbf{Platforms and Frameworks}{: ROS2, CARLA, FreeRTOS, OpenCV, Embedded Linux, QEMU, TensorFlow, Eclipse Ankaios} \\
+     \textbf{Development Tools}{: GNU Toolchain, CMake, Docker, Git, Ansible, OpenOCD, JTAG, LaTeX, Confluence, Jira, Claude Code} \\
+     \textbf{Development Hardware}{: STM32, Raspberry Pi, Jetson Orin, RISC-V, ARM Cortex, ESP32/ESP8266, Simulation PC} \\
+     \textbf{Technologies}{: Interfaces \& Protocols, Sensor Fusion, Computer Vision, Wireless Communication, Analog \& Digital Electronics, PCB (Altium)} \\
+     \textbf{Industry Knowledge}{: Distributed Systems, APIs, Agentic AI, SCRUM, Simulation, Hardware-in-the-Loop (HIL)} \\
+    }}
+ \end{itemize}
 
-\section{Languages}
-\vspace{1pt}
-\begin{itemize}
-\item {[Language 1] (native), [Language 2] (fluent), [Language 3] (intermediate).}
-\end{itemize}
+%-----PROJECTS AND RESEARCH----------------------------------------------------
+\section{Publication and Scientific Writing}
+  \CVSubHeadingListStart
+    \CVSubheading
+      {\href{https://ieeexplore.ieee.org/document/11624101}{Leveraging External Hazard Data to Safeguard Automated Driving System}}{}
+      {IEEE Intelligent Vehicles Symposium (IV 2026)}{}
+    \CVSubheading
+      {\href{https://www.researchgate.net/publication/400899464_Enhanching_RSSI-based_Positioning_Accuracy_using_Advanced_Filtering_Techniques}{Enhancing RSSI-based Positioning Accuracy using Advanced Filtering Techniques}}{}
+      {Master Thesis $|$ Otto-Friedrich-Universität Bamberg}{}
+    \CVSubheading
+      {\href{https://www.researchgate.net/publication/400899541_Applications_of_Internet_of_Things_Towards_Smart_Home_Automation}{Applications of Internet of Things Towards Smart Home Automation}}{}
+      {Bachelor Thesis $|$ Stamford University Bangladesh}{}
+    \CVSubheading
+      {On Device Smart Assistant Using Mozilla DeepSpeech}{}
+      {Case Study}{}
+  \CVSubHeadingListEnd
 
-% ============================================================
-%     PUBLICATIONS (optional)
-% ============================================================
+%-----CERTIFICATION AND AWARDS-------------------------------------------------
+\section{Certification and Awards}
+  \CVSubHeadingListStart
+    \CVSubheading
+      {Silver Medal Winner -- International Blockchain Olympiad (IBCOL 2020)}{Hong Kong}
+      {Awarded for innovative blockchain-IoT architecture}{}
+    \CVSubheading
+      {Certified IoT Engineer}{Dhaka, Bangladesh}
+      {Bangladesh Computer Council (BCC), LICT Project}{}
+    \CVSubheading
+      {AI Programming with Python Nanodegree}{Online}
+      {Udacity}{}
+  \CVSubHeadingListEnd
 
-\section{Publications}
-\vspace{1pt}
-\begin{itemize}
-\item {[Author(s)] ([Year]). [Title]. [Journal/Conference]. \href{[DOI_URL]}{DOI link}}
-\end{itemize}
-
-% ============================================================
-%     HONORS AND AWARDS (optional)
-% ============================================================
-
-\section{Honors and Awards}
-\vspace{1pt}
-\begin{itemize}
-\item{\textbf{[Award Name]} -- [Event/Organization] ([Year]).}
-\end{itemize}
-
-% ============================================================
-%     REFERENCES
-% ============================================================
-
-\section{References}
-\vspace{1pt}
-\begin{itemize}
-\item{Available upon request.}
-\end{itemize}
+%-----COMPETENCIES & ACTIVITIES------------------------------------------------
+\section{Competencies \& Activities}
+ \begin{itemize}[leftmargin=0.5cm, label={}]
+    \small{\item{
+     \textbf{Languages}{: English (CEFR C1 -- Full Professional), Deutsch (CEFR A2), Bengali (Native), Hindi (Conversational)} \\
+     \textbf{Soft Skills}{: Analytical Thinking, Self Management, Cross-Functional Teamwork, Technical Communication} \\
+     \textbf{Others}{: Driving License, PC Building, Hobbyist Hardware Maker} \\
+    }}
+ \end{itemize}
 
 \end{document}

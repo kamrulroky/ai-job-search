@@ -1,10 +1,7 @@
-# Job Application Assistant for [YOUR_NAME]
-
-<!-- SETUP: This file is populated by running /setup -->
-<!-- After running /setup, all [PLACEHOLDER] tokens will be replaced with your actual information -->
+# Job Application Assistant for Kamrul Hasan
 
 ## Role
-This repo is a job application workspace. Claude acts as a career advisor and application assistant for [YOUR_NAME], helping with:
+This repo is a job application workspace. Claude acts as a career advisor and application assistant for Kamrul Hasan, helping with:
 1. **Job fit evaluation** - Assess job postings against your profile (skills, experience, behavioral traits)
 2. **CV tailoring** - Adapt existing CV templates (LaTeX/moderncv) to target specific roles
 3. **Cover letter writing** - Draft targeted cover letters using existing templates (LaTeX)
@@ -13,79 +10,81 @@ This repo is a job application workspace. Claude acts as a career advisor and ap
 
 ## Candidate Profile
 
-<!-- This section is auto-populated by /setup. You can also fill it in manually. -->
-
 ### Identity
-- **Name:** [YOUR_NAME]
-- **Location:** [YOUR_CITY], [YOUR_COUNTRY] ([YOUR_COMMUTE_CONSTRAINTS])
+- **Name:** Kamrul Hasan
+- **Location:** Oldenburg / Bamberg, Germany (Open to relocation across Germany)
+- **Email:** haasankamrul14@gmail.com
+- **Phone:** +49 1632304846
+- **LinkedIn:** [linkedin.com/in/kamrul-hasan](https://linkedin.com/in/kamrul-hasan)
+- **GitHub:** [github.com/kamrulroky](https://github.com/kamrulroky)
 - **Languages:**
-  | Language | Level |
-  |----------|-------|
-  | [LANGUAGE] | [LEVEL] |
-  <!-- Every language you work in professionally, with your level (CEFR, "native," "professional
-  working proficiency," whatever your CV/LinkedIn use - no need to force it into one scale). An
-  undeclared language is a hard deal-breaker if a posting requires it; a declared language at a
-  lower level than a posting wants is flagged for your own judgment, not auto-rejected. See
-  04-job-evaluation.md's Language Gate. -->
-- **CV language:** [YOUR_CV_LANGUAGE] <!-- English unless your market expects otherwise; /setup asks -->
-
-- **Status:** [YOUR_EMPLOYMENT_STATUS]
-- **LinkedIn headline:** "[YOUR_LINKEDIN_HEADLINE]"
+  | Language | Level | Notes |
+  |----------|-------|-------|
+  | English | CEFR C1 | Full professional & academic working proficiency |
+  | German (Deutsch) | CEFR A2 | Coursework completed at Univ. Bamberg (A1, A2, Phonetik) |
+  | Bengali | Native | Mother tongue |
+  | Hindi | Conversational | Spoken fluency |
+- **CV language:** English
+- **Status:** Research Engineer at DLR (Contract through April 2026) / Open to new opportunities
+- **LinkedIn headline:** "Research Engineer | Embedded & Systems Engineering | Autonomous Driving & RTLS"
 
 ### Education
-<!-- List your degrees, most recent first -->
-- **[DEGREE_LEVEL] in [FIELD]** ([YEAR_START]-[YEAR_END]) - [INSTITUTION]
-  - Thesis: "[THESIS_TITLE]"
-  - Topics: [KEY_TOPICS]
+- **Master of Science (M.Sc.) in International Software Systems Science** (2020 – 2024) - Otto-Friedrich-Universität Bamberg, Germany
+  - Grade: 2.5 (GUT / GOOD)
+  - Thesis: "Enhancing RSSI-based Positioning Accuracy using Advanced Filtering Techniques" (Grade: 3.2)
+  - Topics: Distributed Systems, Mobile Software Systems, Data Streams & Complex Event Processing, Machine Learning, Cyber-Physical Systems, Internet Communication
+- **Bachelor of Science (B.Sc.) in Computer Science and Engineering** (2012 – 2017) - Stamford University Bangladesh, Dhaka, Bangladesh
+  - Thesis: "Applications of Internet of Things Towards Smart Home Automation"
 
 ### Professional Experience
-<!-- List your roles, most recent first -->
-- **[JOB_TITLE]** ([START_DATE] - [END_DATE]) - **[COMPANY]** ([LOCATION])
-  - [KEY_RESPONSIBILITY_1]
-  - [KEY_RESPONSIBILITY_2]
-  - [KEY_ACHIEVEMENT]
+- **Research Engineer (Wissenschaftlicher Mitarbeiter)** (May 2024 – April 2026) - **Deutsches Zentrum für Luft- und Raumfahrt (DLR)** (Oldenburg, Germany)
+  - Developed research software for runtime validation of Automated Driving Systems (ADS), integrating multi-sensor and infrastructure hazard data into evaluation pipelines.
+  - Designed simulation-based evaluation scenarios in CARLA and implemented validation metrics for monitoring ADS safety.
+  - Implemented middleware for orchestrating containerized workloads on embedded platforms (Ankaios, ROS2, Embedded Linux).
+  - Collaborated with industry and academic partners to translate scientific research goals into robust software components.
+- **Embedded and Backend Developer (Werkstudent)** (December 2020 – April 2024) - **Favendo GmbH** (Bamberg, Germany)
+  - Developed indoor/outdoor positioning algorithms using advanced filtering techniques for Real-Time Location Systems (RTLS).
+  - Designed and validated embedded firmware for positioning sensors; conducted unit, integration, and system testing for multi-sensor embedded hardware.
+  - Analyzed and optimized positioning accuracy through systematic measurement calibration and reliability characterization.
+- **Software Engineer** (November 2018 – September 2020) - **LEADS Corporation Ltd.** (Dhaka, Bangladesh)
+  - Researched, developed, and deployed software solutions for IoT and AI applications.
+  - Practiced Agile/Scrum methodologies to streamline the development lifecycle.
+- **Embedded Software Engineer** (May 2017 – October 2018) - **JolPi Electronics Ltd.** (Dhaka, Bangladesh)
+  - Developed and debugged embedded software using FreeRTOS and bare-metal C programming.
+  - Applied test-driven development (TDD) for consumer electronic devices.
 
 ### Technical Skills
-- **Primary:** [YOUR_PRIMARY_SKILLS]
-- **Secondary:** [YOUR_SECONDARY_SKILLS]
-- **Domain:** [YOUR_DOMAIN_EXPERTISE]
-- **Software:** [YOUR_TOOLS_AND_SOFTWARE]
+- **Primary:** C/C++, Python, Embedded Linux, FreeRTOS, ROS2, CARLA, RTOS / Bare-Metal, Sensor Fusion, RTLS / Positioning Algorithms
+- **Secondary:** Bash, MATLAB, UML, CMake, GNU Toolchain, Docker, Ansible, QEMU, Altium 365, Ankaios, OpenCV, TensorFlow
+- **Domain:** Automated Driving Systems (ADS), Runtime Verification & Validation (V&V), Distributed Systems, Multi-Sensor Integration, IoT & Edge Computing
+- **Software & Tools:** Git, Docker, CMake, OpenOCD, JTAG, Linux CLI, LaTeX, Confluence, Jira, Claude Code, AI Tools
 
 ### Certifications
-<!-- List relevant certifications with dates -->
-- **[CERTIFICATION_NAME]** - [HOURS]h - completed [DATE]
+- **IoT Engineer** - Bangladesh Computer Council, LICT
+- **AI Programming with Python** - Udacity Nanodegree
 
 ### Publications
-<!-- List peer-reviewed publications, if any -->
-- [AUTHOR_LIST] ([YEAR]). [TITLE]. [JOURNAL].
+- **Kamrul Hasan** et al. (2026). *Leveraging External Hazard Data to Safeguard Automated Driving System*. IEEE Intelligent Vehicles Symposium (IV 2026).
 
 ### Awards
-<!-- List relevant awards, hackathons, competitions -->
-- [AWARD_NAME] - [EVENT] ([YEAR])
+- **Silver Medal Winner** - International Blockchain Olympiad (IBCOL 2020, Hong Kong)
 
 ### Behavioral Profile
-<!-- Your behavioral assessment results (PI, DISC, Myers-Briggs, or self-assessment) -->
-- **[TRAIT_1]** - [DESCRIPTION]
-- **[TRAIT_2]** - [DESCRIPTION]
-- **Strengths:** [YOUR_STRENGTHS]
-- **Growth areas:** [YOUR_GROWTH_AREAS]
-- **Thrives in:** [YOUR_IDEAL_ENVIRONMENT]
+- **Analytical & Innovative:** Combines deep analytical thinking with high creativity to engineer robust solutions to complex systems challenges.
+- **Resilient & Adaptable (Belastbar):** Delivers high-quality engineering outcomes even with rapidly changing requirements or tight deadlines.
+- **Proactive Learner:** High self-initiative to independently master complex emerging technologies (e.g. Ankaios, CARLA, ROS2).
+- **Collaborative & Diplomatic:** Communicates effectively with cross-functional stakeholders, project partners, and research teams.
+- **Strengths:** Systems thinking, firmware & algorithms design, root-cause debugging, multi-sensor calibration, structured experimentation.
+- **Thrives in:** Collaborative engineering environments tackling challenging embedded, automotive, or robotics systems.
 
-### What Excites You
-<!-- What motivates you professionally -->
-- [PASSION_1]
-- [PASSION_2]
-
-### Target Sectors
-<!-- Industries and companies you're targeting -->
-- [SECTOR_1]: [EXAMPLE_COMPANIES]
-- [SECTOR_2]: [EXAMPLE_COMPANIES]
+### Target Roles & Sectors
+- **Target Roles:** Embedded Software Engineer, Research Engineer, Systems Engineer, Firmware Developer, PhD Candidate, Field Application Engineer
+- **Target Sectors:** Automotive & Autonomous Driving, Robotics & Cyber-Physical Systems, Industrial IoT & Embedded Systems, Semiconductor & Hardware Solutions, Research Institutes & Universities
+- **Target Location:** All Germany (Oldenburg, Bremen, Hamburg, Munich, Stuttgart, Berlin, Frankfurt, Nuremberg, Bamberg, etc.) / Remote / Hybrid
 
 ### Deal-breakers
-<!-- Hard constraints on job search. Language requirements are handled separately and
-automatically from your Languages table above - don't duplicate them here. -->
-- [DEALBREAKER_1]
-- [DEALBREAKER_2]
+- Roles with no technical/engineering substance (purely administrative)
+- Full requirement of German C1/C2 for roles where English is not acceptable as primary working language (German is currently A2)
 
 ## Repo Structure
 - `cv/` - LaTeX CV variants (moderncv template, banking style)

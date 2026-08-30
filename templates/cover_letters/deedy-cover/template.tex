@@ -1,0 +1,70 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Deedy - Cover Letter Template
+% LaTeX Template
+% Template: deedy-cover
+% Compile with: xelatex <file>.tex
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\documentclass[]{cover}
+\usepackage{fancyhdr}
+\usepackage[usenames,dvipsnames]{xcolor}
+ 
+\pagestyle{fancy}
+\fancyhf{}
+ 
+\rfoot{Page \thepage \hspace{1pt}}
+\thispagestyle{empty}
+\renewcommand{\headrulewidth}{0pt}
+\begin{document}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%     TITLE NAME
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\namesection{[FIRST_NAME]}{[LAST_NAME]}{ 
+[YOUR_HEADLINE] \textbar\ \href{mailto:[YOUR_EMAIL]}{[YOUR_EMAIL]} \textbar\ [YOUR_PHONE] \textbar\ \urlstyle{same}\href{[YOUR_GITHUB_URL]}{Github} \textbar\ \urlstyle{same}\href{[YOUR_LINKEDIN_URL]}{Linkedin}
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%     MAIN COVER LETTER CONTENT
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\hfill
+
+\begin{minipage}[t]{0.50\textwidth} 
+\companyname{[COMPANY_NAME]}
+\companyaddress{
+[COMPANY_ADDRESS_LINE_1] \\\relax
+[COMPANY_ADDRESS_LINE_2]
+}
+\end{minipage}%
+\begin{minipage}[t]{0.50\textwidth} 
+\currentdate{\today}
+\end{minipage}
+
+\vspace{6pt}
+\lettertitle{[SUBJECT_LINE / LETTER_TITLE]}
+\lettercontent{[SALUTATION / Sehr geehrte Damen und Herren, / Dear Hiring Team,]}
+
+\lettercontent{
+[OPENING_PARAGRAPH - Role applied for, background connection, 2-3 sentences]
+}
+
+\lettercontent{
+[BODY_PARAGRAPH_1 - Core relevant technical experience, embedded/systems projects, achievements without bullet points]
+}
+
+\lettercontent{
+[BODY_PARAGRAPH_2 - Technical domain alignment, algorithms, frameworks, publications, and practical execution]
+}
+
+\lettercontent{
+[BODY_PARAGRAPH_3 - Company connection, motivation for this specific team/product/mission]
+}
+
+\lettercontent{
+[CLOSING_PARAGRAPH - Personal fit, team collaboration, language/communication, next steps]
+}
+
+\closing{[CLOSING_PHRASE / Mit freundlichen Grüßen / Kind regards,],\\
+[YOUR_NAME]}
+
+\end{document}

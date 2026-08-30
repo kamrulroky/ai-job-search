@@ -4,7 +4,19 @@ framework_version: 1.4.3
 
 # CV Templates and Tailoring Guide
 
-<!-- SETUP: Profile statements and section ordering are personalized by running /setup -->
+<!-- BEGIN ACTIVE-TEMPLATE (managed by /add-template - do not edit by hand) -->
+> **Active template override: `photo-palatino-cv`**
+>
+> A custom template is active. Where this block conflicts with the stock guidance below, this block wins. Structural advice below (tailoring, page-budget, cutting rules) still applies.
+>
+> - **Template skeleton:** `templates/cv/photo-palatino-cv/template.tex` — use this as the structural reference instead of the stock template
+> - **Manifest:** `templates/cv/photo-palatino-cv/TEMPLATE.md` — read this for style rules and known pitfalls before drafting
+> - **Source extension:** `.tex`
+> - **Compile command:** `cd cv && pdflatex -interaction=nonstopmode <file>.tex`
+> - **Fonts:** Palatino (system / TeX distribution font)
+> - **Page limit:** exactly 2 pages
+> - **Output file:** `cv/main_<company>_<role>.tex`; ensure `formalP.jpg` is present in `cv/` directory
+<!-- END ACTIVE-TEMPLATE -->
 
 ## Template: LaTeX moderncv (Banking Style)
 
@@ -52,7 +64,7 @@ Expected output: `Output written on main_<company>_<role>.pdf (2 pages, ...)`. A
     linkcolor=blue,
     filecolor=magenta,
     urlcolor=blue,
-    pdftitle={[YOUR_NAME] - CV},
+    pdftitle={Kamrul Hasan - CV},
     % Keep pdfpagemode=UseNone: this block runs after moderncv's own
     % \AtEndPreamble (moderncv.cls sets pdfpagemode there), so a FullScreen
     % value here would win and open every CV in fullscreen presentation mode.
@@ -62,13 +74,11 @@ Expected output: `Output written on main_<company>_<role>.pdf (2 pages, ...)`. A
 \usepackage{import}
 
 % Personal data
-\name{[FIRST_NAME]}{[LAST_NAME]}
-% If you have no address to list, DELETE this whole line. \address{}{}{} fails
-% with "There's no line here to end" on every moderncv version.
-\address{[YOUR_ADDRESS]}{}{}
-\phone[mobile]{[YOUR_PHONE]}
-\email{[YOUR_EMAIL]}
-\extrainfo{\href{[YOUR_LINKEDIN_URL]}{LinkedIn}, \href{[YOUR_GITHUB_URL]}{GitHub}}
+\name{Kamrul}{Hasan}
+\address{Oldenburg / Bamberg, Germany}{}{}
+\phone[mobile]{+49 1632304846}
+\email{haasankamrul14@gmail.com}
+\extrainfo{\href{https://linkedin.com/in/kamrul-hasan}{LinkedIn}, \href{https://github.com/kamrulroky}{GitHub}}
 
 \begin{document}
 \makecvtitle
@@ -129,12 +139,14 @@ When the role sits outside your home domain, **lead with the domain-transfer arg
 
 **Create 2-3 profile statement templates for your main role types:**
 
-<!-- SETUP: These are populated based on your background -->
-**For [YOUR_PRIMARY_ROLE_TYPE] roles:**
-> [YOUR_PROFILE_STATEMENT_TEMPLATE_1]
+**For Embedded Software / Firmware Engineer roles:**
+> Embedded Software Engineer with an M.Sc. in International Software Systems Science and 5+ years of practical experience developing low-level C/C++ firmware, FreeRTOS applications, and multi-sensor edge systems. Proven track record at Favendo and JolPi implementing real-time positioning algorithms, sensor calibration, and hardware-in-the-loop validation. Experienced in bare-metal programming, Linux kernel/embedded platforms, and modern development toolchains (CMake, Docker, Git).
 
-**For [YOUR_SECONDARY_ROLE_TYPE] roles:**
-> [YOUR_PROFILE_STATEMENT_TEMPLATE_2]
+**For Research / Systems / Autonomous Driving Engineer roles:**
+> Research and Systems Engineer with deep expertise in runtime validation, simulation scenarios (CARLA), and middleware orchestration (Ankaios, ROS2) for Automated Driving Systems (ADS). Currently engineering validation pipelines at the German Aerospace Center (DLR), integrating multi-sensor hazard data and publishing in IEEE IV 2026. Skilled in bridging high-level algorithmic concepts with robust embedded execution.
+
+**For Field Application / Solutions / PhD Candidate roles:**
+> Systems & Applications Engineer with strong academic and industrial foundation across cyber-physical systems, IoT, and sensor integration. Combines hands-on lab prototyping with diplomatic, cross-functional partner collaboration across academic and industrial consortiums. Experienced in translating complex technical requirements into deployable software components and empirical research publications.
 
 Statements labeled *[Used for: <company>_<role>]* were extracted from archived application drafts by `/setup` Path A. They are **phrasing references, never fact sources**: when drafting from one, every factual claim still comes from `01-candidate-profile.md` - a past tailored draft does not vouch for its own accuracy.
 
