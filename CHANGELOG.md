@@ -13,6 +13,21 @@ per-file diff commands.
 
 ## [Unreleased]
 
+### Added
+
+- **`/rank` now consumes the `posted_date` #391 persists** (#390, the deferred second
+  half) - Step 3 gains a staleness flag: a posting whose stored `posted_date` is more
+  than 30 days old at rank time carries a visible ⚠ marker with its age spelled out
+  alongside the score ("⚠ posted 2024-05-13, 27 months ago"), the same FLAG treatment as
+  location and language - in the ranking, for the user to judge, never an exclusion (the
+  #390 posting was 27 months old *and still live*; age is a signal, not a veto, and a
+  future stored `deadline` outranks it). Costs no fetch: age is re-derived each run from
+  the stored value and never persisted. Boundary rules carried over verbatim from the
+  schema and rule 6: no `posted_date` or `null` means no flag and no guess (never
+  inferred from `first_seen`), and unparseable values are treated as absent and reported
+  once with their portal. Pinned by four new cases in `test_rank_command.py`, each
+  verified to fail against the rule-less spec.
+
 ### Security
 
 - **`settings.json` no longer pre-approves `bun run` on arbitrary files** (#396) - the
@@ -26,6 +41,47 @@ per-file diff commands.
 
 ### Fixed
 
+- **`jobbank-search` no longer dies over one malformed feed date** (#416) - `new Date()`
+  on a present-but-unparseable `pubDate` yields an Invalid Date whose `toISOString()`
+  throws `RangeError`, and `normalizeSearchItem` runs inside an unguarded `items.map()`,
+  so a single bad RSS item killed the entire search with `{"error": "Invalid Date",
+  "code": "API_ERROR"}` and exit 1 - a whole default-ON portal lost to one item, with
+  the error pointing at the API. The un-CDATA'd fallback capture in `parseRssItems` can
+  deliver exactly such a value. An unparseable `pubDate` now degrades to the same shape
+  as an absent one (`posted` empty, `date: null`, per the `seen_jobs.json` contract that
+  #391 put this field on), and every other item survives. Pinned by three new cases in
+  `search-normalization.test.ts`, each verified to fail on the unfixed code.
+
+- **`linkedin-search` rejects fractional numeric flags instead of silently changing
+  the query** (#371) - bare `parseInt` truncated values before validation, so
+  `--jobage 0.5` became `0` and silently omitted LinkedIn's `f_TPR` freshness filter
+  while the CLI reported no argument error. `--jobage`, `--jobage-minutes`, `--page`,
+  and `--limit` now accept whole numbers >= 1 only and reject fractions and zero with
+  the stderr-JSON `BAD_ARG` contract, matching the other portal CLIs. Pinned by eight
+  cases verified to fail on the unfixed CLI. Reported by @Meet6338-X.
+
+- **`linkedin-search detail` accepts LinkedIn job URLs with trailing slashes** (#411) -
+  passing a job URL with a trailing slash (e.g., `https://www.linkedin.com/jobs/view/<id>/`
+  or a slugged variant with or without query strings) failed validation and exited 1 with
+  `BAD_ID` before any network request because the regex delimiter strictly expected `?`
+  or end-of-string immediately after the numeric ID. The boundary check now matches
+  `[\/?]`, correctly extracting IDs from browser-copied URLs, regional subdomains, and
+  links with tracking parameters. Pinned by eleven new cases in `parsing.test.ts`.
+
+- **The `documents/interview/**` ignore rule no longer claims interview prep is written there**
+  (#336). `/interview` saves its pack to
+  `documents/applications/<company>_<role>/interview_prep_<stage>.md`, already ignored by
+  `documents/applications/**`; nothing has ever written to `documents/interview/`. Nothing leaked -
+  but it was the personal-data block's one dedicated line about interview material, so an auditor
+  checking the framework's most sensitive artifact had every reason to read it and stop, at the
+  only path in the block with no writer. The protection rationale now sits above
+  `documents/applications/**`, the rule that actually provides it, so the next reader finds it
+  where it lives; `documents/interview/**` stays, relabelled belt-and-braces rather than primary
+  guard (`REQUIRED_IGNORE_RULES` pins it, so removing it from `.gitignore` alone fails the guard).
+  Pinned by `tests/test_security_guards.py`, which derives the prep-pack path from
+  `/interview`'s own spec instead of hardcoding it - so moving that path fails CI rather than
+  quietly re-staling the comment.
+
 - **`/scrape` now persists each posting's publication date** (#390) - Step 2's contract guarantees a
   `date` on every portal CLI's search output (CI enforces it in `test_scrape_contract.py`) and
   Step 1b uses that date to scope a run to the last 14 days, but Step 4's `seen_jobs.json` schema
@@ -38,6 +94,19 @@ per-file diff commands.
   gains `posted_date` (`null` when the portal returned no date, never inferred or backfilled).
   Pinned by three new cases in `test_scrape_contract.py`, each verified to fail on the unfixed
   spec. Reported and diagnosed from a real run by @sandunwijerathne.
+
+- **`salary_lookup.py` no longer crashes on a `null` `metadata` or `categories`** - `--validate`
+  treats an explicit `"metadata": null` / `"categories": null` the same as an omitted key (the
+  shape checks are "...must be an object *when provided*" and skip `None`), but the renderer read
+  both through `dict.get(key, {})`, which only substitutes the default for an *absent* key - a
+  present-but-null value passed straight through. `format_entry` then hit `None.get("index_label",
+  ...)` (`AttributeError`) or, via the numeric-field fallback, `None[key] = value` (`TypeError`),
+  so a hand-maintained `salary_data.json` using `null` for "no value here" died with an uncaught
+  traceback right after printing `Found 1 match(es)`. `format_entry` now coerces both to `{}` up
+  front, so `null`, absent, and `{}` behave identically. Pinned by four cases in
+  `test_salary_lookup.py` - two unit calls into `format_entry` and two end-to-end (`main()
+  --validate` blesses the file, then the lookup path renders it), one per null shape, all verified
+  to fail on the unfixed renderer.
 
 ## [1.7.0] - 2026-08-29
 
