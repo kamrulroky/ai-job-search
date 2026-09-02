@@ -1,43 +1,48 @@
 #!/bin/bash
-# Convenient compilation helper script
+# Smart compilation helper script that automatically targets the latest modified .tex files
 
 set -e
 
+LATEST_CV=$(ls -t cv/*.tex 2>/dev/null | grep -v "main_example" | head -n 1)
+LATEST_COVER=$(ls -t cover_letters/*.tex 2>/dev/null | grep -v "cover_example" | head -n 1)
+
 case "$1" in
   cv)
-    echo "Compiling CVs..."
-    cd cv
-    if [ -n "$2" ]; then
-      pdflatex -interaction=nonstopmode "$2"
-    else
-      pdflatex -interaction=nonstopmode main_Fraunhofer_IPMS_PhD.tex
-    fi
+    TARGET="${2:-$(basename "$LATEST_CV")}"
+    echo "Compiling CV: cv/$TARGET"
+    (cd cv && pdflatex -interaction=nonstopmode "$TARGET")
     ;;
   cover)
-    echo "Compiling Cover Letters..."
-    cd cover_letters
-    if [ -n "$2" ]; then
-      xelatex -interaction=nonstopmode "$2"
-    else
-      xelatex -interaction=nonstopmode cover_Fraunhofer_IPMS_PhD.tex
-    fi
+    TARGET="${2:-$(basename "$LATEST_COVER")}"
+    echo "Compiling Cover Letter: cover_letters/$TARGET"
+    (cd cover_letters && xelatex -interaction=nonstopmode "$TARGET")
     ;;
   watch)
-    echo "Watching for .tex changes in cv/ and cover_letters/ (Press Ctrl+C to stop)..."
+    echo "Auto-watcher active on cv/ and cover_letters/ (Press Ctrl+C to stop)..."
     while true; do
       inotifywait -q -e close_write cv/*.tex cover_letters/*.tex 2>/dev/null || sleep 2
-      echo "[$(date +'%T')] Change detected, recompiling..."
-      (cd cv && pdflatex -interaction=nonstopmode main_Fraunhofer_IPMS_PhD.tex >/dev/null 2>&1 || true)
-      (cd cover_letters && xelatex -interaction=nonstopmode cover_Fraunhofer_IPMS_PhD.tex >/dev/null 2>&1 || true)
+      CURR_CV=$(ls -t cv/*.tex 2>/dev/null | grep -v "main_example" | head -n 1)
+      CURR_COVER=$(ls -t cover_letters/*.tex 2>/dev/null | grep -v "cover_example" | head -n 1)
+      echo "[$(date +'%T')] Change detected! Compiling $(basename "$CURR_CV") and $(basename "$CURR_COVER")..."
+      (cd cv && pdflatex -interaction=nonstopmode "$(basename "$CURR_CV")" >/dev/null 2>&1 || true)
+      (cd cover_letters && xelatex -interaction=nonstopmode "$(basename "$CURR_COVER")" >/dev/null 2>&1 || true)
       echo "[$(date +'%T')] Compiled successfully!"
     done
     ;;
   *)
-    echo "Compiling all documents..."
-    (cd cv && pdflatex -interaction=nonstopmode main_Fraunhofer_IPMS_PhD.tex)
-    (cd cover_letters && xelatex -interaction=nonstopmode cover_Fraunhofer_IPMS_PhD.tex)
-    cp cv/main_Fraunhofer_IPMS_PhD.pdf documents/applications/Fraunhofer_IPMS_PhD_Smart_Sensing/cv_draft.pdf 2>/dev/null || true
-    cp cover_letters/cover_Fraunhofer_IPMS_PhD.pdf documents/applications/Fraunhofer_IPMS_PhD_Smart_Sensing/cover_letter.pdf 2>/dev/null || true
-    echo "Done! PDFs updated."
+    TARGET_CV=$(basename "$LATEST_CV")
+    TARGET_COVER=$(basename "$LATEST_COVER")
+    echo "Compiling latest CV ($TARGET_CV) and Cover Letter ($TARGET_COVER)..."
+    (cd cv && pdflatex -interaction=nonstopmode "$TARGET_CV")
+    (cd cover_letters && xelatex -interaction=nonstopmode "$TARGET_COVER")
+    
+    # Sync with application folder if DLR 5941
+    if [[ "$TARGET_CV" =~ "5941" ]]; then
+      cp cv/"$TARGET_CV" documents/applications/DLR_SC_Flugsoftware_5941_Payload/cv_draft.tex 2>/dev/null || true
+      cp cv/"${TARGET_CV%.tex}.pdf" documents/applications/DLR_SC_Flugsoftware_5941_Payload/cv_draft.pdf 2>/dev/null || true
+      cp cover_letters/"$TARGET_COVER" documents/applications/DLR_SC_Flugsoftware_5941_Payload/cover_letter.tex 2>/dev/null || true
+      cp cover_letters/"${TARGET_COVER%.tex}.pdf" documents/applications/DLR_SC_Flugsoftware_5941_Payload/cover_letter.pdf 2>/dev/null || true
+    fi
+    echo "Done! Both PDFs successfully compiled and updated."
     ;;
 esac
