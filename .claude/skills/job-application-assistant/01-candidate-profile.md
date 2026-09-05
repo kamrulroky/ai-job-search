@@ -71,10 +71,10 @@ Dhaka, Bangladesh
 - **UML & Architecture** (Proficient): System modeling, architectural documentation
 
 ### Domain Expertise
-- **Embedded & Real-Time Systems**: FreeRTOS, Embedded Linux, Bare-Metal, QEMU, RTOS, ARM, RISC-V, STM32, ESP32
+- **Embedded & Real-Time Systems**: FreeRTOS, Embedded Linux, Yocto Project (Custom OS builds, layer/recipe customization for ARM IoT gateways), Bare-Metal, QEMU, RTOS, ARM, RISC-V, STM32, ESP32
 - **Autonomous Systems & Mobility**: ADS Validation & Verification (V&V), CARLA Simulator, ROS2, Hazard Data Integration
-- **Positioning & Sensor Systems**: RTLS, RSSI Filtering, Sensor Fusion, Multi-Sensor Calibration, BLE/Wireless
-- **Distributed & Edge Computing**: Ankaios Container Orchestration, Distributed Middleware, Edge-Cloud Systems
+- **Positioning & Sensor Systems**: RTLS, RSSI Filtering, Sensor Fusion, Multi-Sensor Calibration, BLE/Wireless, Wi-Fi Mesh in Agriculture / Livestock Monitoring
+- **Distributed & Edge Computing**: Ankaios Container Orchestration, Distributed Middleware, Edge-Cloud Systems, IoT Gateways
 
 ### Software & Tools
 - CMake, GNU Toolchain, OpenOCD, JTAG, Docker, Ansible, Git, LaTeX, Jira, Confluence, Altium 365, Claude Code

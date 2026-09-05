@@ -54,9 +54,9 @@ This repo is a job application workspace. Claude acts as a career advisor and ap
   - Applied test-driven development (TDD) for consumer electronic devices.
 
 ### Technical Skills
-- **Primary:** C/C++, Python, Embedded Linux, FreeRTOS, ROS2, CARLA, RTOS / Bare-Metal, Sensor Fusion, RTLS / Positioning Algorithms
-- **Secondary:** Bash, MATLAB, UML, CMake, GNU Toolchain, Docker, Ansible, QEMU, Altium 365, Ankaios, OpenCV, TensorFlow
-- **Domain:** Automated Driving Systems (ADS), Runtime Verification & Validation (V&V), Distributed Systems, Multi-Sensor Integration, IoT & Edge Computing
+- **Primary:** C/C++, Python, Embedded Linux, Yocto Project, FreeRTOS, ROS2, CARLA, RTOS / Bare-Metal, Sensor Fusion, RTLS / Positioning Algorithms
+- **Secondary:** Bash, MATLAB, UML, CMake, GNU Toolchain, Docker, Ansible, QEMU, Altium 365, Ankaios, OpenCV, TensorFlow, Wi-Fi Mesh / Ad-Hoc Routing
+- **Domain:** Automated Driving Systems (ADS), Runtime Verification & Validation (V&V), Distributed Systems, Multi-Sensor Integration, IoT & Edge Computing, Agri-Tech Sensor Networks
 - **Software & Tools:** Git, Docker, CMake, OpenOCD, JTAG, Linux CLI, LaTeX, Confluence, Jira, Claude Code, AI Tools
 
 ### Certifications
