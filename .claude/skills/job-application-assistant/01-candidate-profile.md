@@ -23,10 +23,12 @@ framework_version: 1.1.1
 | Hindi | Conversational | Spoken fluency |
 
 ## Education
+> [!IMPORTANT]
+> **NO GRADES POLICY:** Never mention any academic grades, GPAs, or exam marks (e.g. 2.5, 3.2, 1.7, "top marks", "Noten") in any CV or Cover Letter.
 
 | Degree | Period | Institution | Key Topics |
 |--------|--------|-------------|------------|
-| Master of Science (M.Sc.) in International Software Systems Science | 2020 – 2024 | Otto-Friedrich-Universität Bamberg, Germany | Grade: 2.5 (Good). Distributed Systems, Mobile Systems, Complex Event Processing, Machine Learning, Cyber-Physical Systems, Internet Communication. Master Thesis: *Enhancing RSSI-based Positioning Accuracy using Advanced Filtering Techniques* (Grade 3.2). |
+| Master of Science (M.Sc.) in International Software Systems Science | 2020 – 2024 | Otto-Friedrich-Universität Bamberg, Germany | Distributed Systems, Mobile Systems, Complex Event Processing, Machine Learning, Cyber-Physical Systems, Internet Communication. Master Thesis: *Enhancing RSSI-based Positioning Accuracy using Advanced Filtering Techniques*. |
 | Bachelor of Science (B.Sc.) in Computer Science and Engineering | 2012 – 2017 | Stamford University Bangladesh, Dhaka, Bangladesh | Bachelor Thesis: *Applications of Internet of Things Towards Smart Home Automation*. |
 
 ## Professional Experience

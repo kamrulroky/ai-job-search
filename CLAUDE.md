@@ -29,9 +29,11 @@ This repo is a job application workspace. Claude acts as a career advisor and ap
 - **LinkedIn headline:** "Research Engineer | Embedded & Systems Engineering | Autonomous Driving & RTLS"
 
 ### Education
+> [!IMPORTANT]
+> **NO GRADES POLICY:** Never mention any grades, GPAs, or exam marks (e.g. 2.5, 3.2, 1.7, "top marks", "Noten") in any CV or Cover Letter.
+
 - **Master of Science (M.Sc.) in International Software Systems Science** (2020 – 2024) - Otto-Friedrich-Universität Bamberg, Germany
-  - Grade: 2.5 (GUT / GOOD)
-  - Thesis: "Enhancing RSSI-based Positioning Accuracy using Advanced Filtering Techniques" (Grade: 3.2)
+  - Thesis: "Enhancing RSSI-based Positioning Accuracy using Advanced Filtering Techniques"
   - Topics: Distributed Systems, Mobile Software Systems, Data Streams & Complex Event Processing, Machine Learning, Cyber-Physical Systems, Internet Communication
 - **Bachelor of Science (B.Sc.) in Computer Science and Engineering** (2012 – 2017) - Stamford University Bangladesh, Dhaka, Bangladesh
   - Thesis: "Applications of Internet of Things Towards Smart Home Automation"
